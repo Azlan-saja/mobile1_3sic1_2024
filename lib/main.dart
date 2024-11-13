@@ -11,12 +11,24 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Home'),
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: const Text('ini adalah body'),
+        body: const Column(
+          children: [
+            Text('1'),
+            Text('2'),
+            Text('3'),
+            Text('4'),
+          ],
+        ),
         bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           items: const [
             BottomNavigationBarItem(
                 icon: Icon(
