@@ -19,12 +19,45 @@ class MyApp extends StatelessWidget {
           title: const Text('Home'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: const Column(
+        body: Column(
           children: [
-            Text('1'),
-            Text('2'),
-            Text('3'),
-            Text('4'),
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Nilai Panjang',
+                icon: Icon(Icons.edit_note),
+                hintText: '0',
+                helperText: 'Masukkan nilai panjang',
+                suffixText: 'cm',
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Nilai Lebar',
+                icon: Icon(Icons.edit_note),
+                hintText: '0',
+                helperText: 'Masukkan nilai lebar',
+                suffixText: 'cm',
+              ),
+              keyboardType: TextInputType.number,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+              ),
+              onPressed: () {},
+              child: const Text('Luas'),
+            ),
+            const TextField(                            
+              decoration: InputDecoration(
+                labelText: 'Hasil Luas',
+                icon: Icon(Icons.library_books),
+                hintText: '0',
+                helperText: 'Rumus PxL',
+                suffixText: 'cm',
+              ),
+              readOnly: true,
+            ),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
