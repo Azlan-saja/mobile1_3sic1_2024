@@ -19,46 +19,67 @@ class MyApp extends StatelessWidget {
           title: const Text('Home'),
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         ),
-        body: Column(
-          children: [
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Nilai Panjang',
-                icon: Icon(Icons.edit_note),
-                hintText: '0',
-                helperText: 'Masukkan nilai panjang',
-                suffixText: 'cm',
+        body: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            children: [
+              const Text(
+                'Hitung Persegi Panjang',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              keyboardType: TextInputType.number,
-            ),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Nilai Lebar',
-                icon: Icon(Icons.edit_note),
-                hintText: '0',
-                helperText: 'Masukkan nilai lebar',
-                suffixText: 'cm',
+              const SizedBox(
+                height: 20,
               ),
-              keyboardType: TextInputType.number,
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Nilai Panjang',
+                  icon: Icon(Icons.edit_note),
+                  hintText: '0',
+                  helperText: 'Input angka,',
+                  suffixText: 'cm',
+                ),
+                maxLength: 4,
+                keyboardType: TextInputType.number,
               ),
-              onPressed: () {},
-              child: const Text('Luas'),
-            ),
-            const TextField(                            
-              decoration: InputDecoration(
-                labelText: 'Hasil Luas',
-                icon: Icon(Icons.library_books),
-                hintText: '0',
-                helperText: 'Rumus PxL',
-                suffixText: 'cm',
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Nilai Lebar',
+                  icon: Icon(Icons.edit_note),
+                  hintText: '0',
+                  helperText: 'Masukkan nilai lebar',
+                  suffixText: 'cm',
+                ),
+                maxLength: 4,
+                keyboardType: TextInputType.number,
               ),
-              readOnly: true,
-            ),
-          ],
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+                ),
+                onPressed: () {},
+                child: const Text('Luas'),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const TextField(
+                decoration: InputDecoration(
+                  labelText: 'Hasil Luas',
+                  icon: Icon(Icons.library_books),
+                  hintText: '0',
+                  helperText: 'Rumus PxL',
+                  suffixText: 'cm',
+                ),
+                readOnly: true,
+              ),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
